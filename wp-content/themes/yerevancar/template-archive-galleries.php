@@ -12,6 +12,30 @@
             <div class="col-sm-12">
                 <h1 class="text-center"><?php _e( 'Gallery', 'yerevancar' ); ?></h1>
                 <div class="row">
+                    <!--Wedding photos gallery-->
+                    <?php $weddingPhotosPostId = icl_object_id(717, 'post', true);
+                    $weddingPhotosPostContent = get_post_field('post_content', $weddingPhotosPostId);
+                    $patt = '';
+                    preg_match_all( '/^\[.*ids="(.+)".*\]$/', $weddingPhotosPostContent, $res );
+                    $galleryFullIdsArr = explode( ',', $res[1][0]);
+                    ?>
+                    <div class="col-sm-4">
+                        <?php
+                        $i = 0;
+                        foreach($galleryFullIdsArr as $galleryFullId) { ?>
+                            <a class="fancybox" title="<?php echo get_the_title($weddingPhotosPostId); ?>" style="display:none" rel="gallerywedding" href="<?php echo wp_get_attachment_image_src( $galleryFullId, 'extra-large-thumb' )[0]; ?>">
+                                <?php echo wp_get_attachment_image( $galleryFullId, 'large-thumb', false, array( 'class' => 'img-responsive' ) ); ?>
+                            </a>
+                            <?php $i++;
+                        }
+                        $thumbSrc = wp_get_attachment_image_src( get_post_thumbnail_id( $weddingPhotosPostId ), 'extra-large-thumb' ); ?>
+                        <a class="fancybox" title="<?php echo get_the_title($weddingPhotosPostId); ?>" href="<?php echo $thumbSrc[0]; ?>" rel="gallerywedding">
+                            <span class="gal-icon"></span>
+                            <?php echo get_the_post_thumbnail( $weddingPhotosPostId, 'large-thumb', array( 'class' => 'img-responsive gal-thumbnail' ) ); ?>
+                        </a>
+                        <h4><?php echo get_the_title($weddingPhotosPostId); ?></h4>
+                    </div>
+
                     <?php $gal = 0;
                     $carsQuery = new WP_Query( array( 'post_type' => 'cars', 'posts_per_page' => -1 ) );
                     if($carsQuery->have_posts()): while($carsQuery->have_posts()): $carsQuery->the_post();
@@ -33,7 +57,7 @@
                                     <span class="gal-icon"></span>
                                     <?php the_post_thumbnail( 'large-thumb', array( 'class' => 'img-responsive gal-thumbnail' ) ); ?>
                                 </a>
-                                <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
+                                <h4><?php the_title(); ?></h4>
                             </div>
 
                         <?php }
@@ -52,8 +76,10 @@ jQuery(document).ready(function ($) {
         closeEffect: 'none',
         beforeShow: function () {
             if (this.title) {
-                this.title += '<br />';
-                this.title += '<a href="' + $(this.element).data('url') + '" class="btn btn-primary"><?php _e( 'Order', 'yerevancar' ); ?></a>'
+                if($(this.element).data('url')) {
+                    this.title += '<br />';
+                    this.title += '<a href="' + $(this.element).data('url') + '" class="btn btn-primary"><?php _e('Order', 'yerevancar'); ?></a>'
+                }
             }
         },
         helpers: {
