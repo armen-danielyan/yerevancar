@@ -17,7 +17,7 @@ function LoadScriptsStyles() {
     wp_enqueue_script( 'jqueryUI' );
     wp_register_style( 'jqueryUIstyle', 'https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css' );
     wp_enqueue_style( 'jqueryUIstyle' );
-    wp_register_script( 'googlemapapi', 'http://maps.googleapis.com/maps/api/js' );
+    wp_register_script( 'googlemapapi', 'https://maps.googleapis.com/maps/api/js' );
     wp_enqueue_script( 'googlemapapi' );
     wp_register_script( 'fancyboxjspack', get_template_directory_uri() . '/incl/fancybox/source/jquery.fancybox.pack.js', array( 'jquery' ) );
     wp_enqueue_script( 'fancyboxjspack' );

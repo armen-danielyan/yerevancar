@@ -4,18 +4,18 @@
  */
 ?>
 
-
-
 <?php get_header(); ?>
 
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+    <script>(function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 
     <main id="contact-page">
         <section id="cont-numbers">
@@ -69,30 +69,29 @@
         </section>
     </main>
 
-        <script>
-    var myCenter=new google.maps.LatLng(40.1922232,44.5043868);
+    <script>
+        var myCenter = new google.maps.LatLng(40.1922232, 44.5043868);
 
-    function initialize()
-    {
-    var mapProp = {
-      center:myCenter,
-      zoom:15,
-      scrollwheel:  false,
-      mapTypeId:google.maps.MapTypeId.ROADMAP
-      };
+        function initialize() {
+            var mapProp = {
+                center: myCenter,
+                zoom: 15,
+                scrollwheel: false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
 
-    var map=new google.maps.Map(document.getElementById("ContactPageMap"),mapProp);
+            var map = new google.maps.Map(document.getElementById("ContactPageMap"), mapProp);
 
-    var marker=new google.maps.Marker({
-      position:myCenter,
-      icon:"<?php bloginfo('template_url'); ?>/img/maplogo.png",
-    animation:google.maps.Animation.BOUNCE
-      });
+            var marker = new google.maps.Marker({
+                position: myCenter,
+                icon: "<?php bloginfo('template_url'); ?>/img/maplogo.png",
+                animation: google.maps.Animation.BOUNCE
+            });
 
-    marker.setMap(map);
-    }
+            marker.setMap(map);
+        }
 
-    google.maps.event.addDomListener(window, 'load', initialize);
+        google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 
 <?php get_footer(); ?>

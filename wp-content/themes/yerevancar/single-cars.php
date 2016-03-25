@@ -3,11 +3,11 @@
     <main id="single-car-page">
         <section>
             <div class="row">
-                <div class="col-sm-2">
+                <div class="single-car-sidebar col-md-2">
                     <?php include( 'custom-sidebar.php' ); ?>
                 </div>
 
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-md-4">
                     <div id="car-gallery">
                         <?php $postID = get_the_ID();
                         $galleryIds = get_post_meta($postID, '_YC_product_gallery_ids', true);
@@ -26,7 +26,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-6">
+                <div class="col-sm-8 col-md-6">
                     <h1><?php the_title(); ?></h1>
                     <?php
                     $car = [];

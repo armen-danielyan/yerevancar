@@ -158,7 +158,7 @@ for ( $i = 1; $i <= $count; $i++ ) {
 			$content = explode($delim[0], $content);
 			$content = $content[1];
 		}
-		$content = strip_tags($content, '<images><p><br><i><b><u><em><strong><strike><font><span><div>');
+		$content = strip_tags($content, '<img><p><br><i><b><u><em><strong><strike><font><span><div>');
 	}
 	$content = trim($content);
 

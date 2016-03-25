@@ -20,13 +20,13 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'homepage_yerevancar');
+define('DB_NAME', 'yerevanc_yerevancar');
 
 /** MySQL database username */
-define('DB_USER', 'homepage_yerevan');
+define('DB_USER', 'yerevanc_yerevan');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'dvHnqeAOao[Z');
+define('DB_PASSWORD', 'pA8T8-HP61bM');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -86,4 +86,5 @@ if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Sets up WordPress vars and included files. */
-require_once(ABSPATH . 'wp-settings.php');
+require_once(ABSPATH . 'wp-settings.php');//Disable File Edits
+define('DISALLOW_FILE_EDIT', true);

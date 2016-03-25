@@ -9,11 +9,11 @@
 <main id="archive-cars-page">
     <section>
         <div class="row">
-            <div class="col-sm-2">
+            <div class="arch-car-sidebar col-md-2">
                 <?php include( 'custom-sidebar.php' ); ?>
             </div>
 
-            <div class="col-sm-10">
+            <div class="col-sm-12 col-md-10">
                 <?php $iter = 0;
                 $carTermId = (isset($_GET['cartype'])) ? (int)$_GET['cartype'] : icl_object_id(9, 'category', true);
                 $carsArchiveArgs = array(

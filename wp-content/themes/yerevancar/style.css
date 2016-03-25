@@ -62,7 +62,7 @@ address {
 	font-size: 16px;
 	font-weight: 500;
 	text-transform: uppercase;
-	color: #000000
+	color: #272727;
 }
 
 #header-phone {
@@ -93,6 +93,10 @@ address {
 	background-color: transparent !important;
 	color: #840001 !important;
 }
+
+/* .lang_sel_list_horizontal{
+	margin-top: 10px;
+} */
 
 .lang_sel_list_horizontal img{
 	outline: 1px solid #DEDEDE;
@@ -491,16 +495,17 @@ footer address {
 
 #gallery-cars-page .col-sm-4{
 	text-align: center;
+	margin-top: 30px;
 }
  
 #gallery-cars-page .gal-thumbnail{
 	border: 10px solid #ffffff;
 	transition: all 0.3s;
-    box-shadow: 0px 0px 20px #888888;
+    box-shadow: 0px 0px 10px #888888;
     border-radius: 3px;
 } 
 
-.gal-icon {
+.gal-icon{
     position: absolute;
     top: 10px;
     right: 25px;
@@ -587,7 +592,7 @@ a:hover .gal-icon:after{
     height: 57px;
     margin-top: -29px;
     margin-left: -29px;
-    background: url(http://static.livedemo00.template-help.com/wordpress_53265/wp-content/themes/theme53265/images/zoom-icon.png) no-repeat 0 0;
+    background: url(img/plus.png) no-repeat 0 0;
     content: "";
     visibility: hidden;
     -webkit-transform: scale(2);
@@ -645,12 +650,24 @@ visibility: visible;
 	#serv-cont {
 		text-align: center;
 	}
+
+	.arch-car-sidebar, .single-car-sidebar{
+		display: none;
+	}
+
+	#menu-header-main-menu li a, #menu-header-main-menu-en li a, #menu-header-main-menu-ru li a{
+		padding: 15px 14px;
+	}
 }
 
 @media screen and (max-width: 768px) {
 	#header-logo a img {
 		margin: 0 auto;
 		padding: 20px;
+	}
+
+	.gal-icon{
+		bottom: 39px;
 	}
 
 	#archive-services-page #serv-cont .row .col-sm-7 a:first-child + div + a{
@@ -676,11 +693,6 @@ visibility: visible;
 		padding-left: 35px !important;
 	}
 
-	.lang_sel_list_horizontal{
-		float: right;
-    	top: -35px;
-	}
-
 	.navbar-toggle{
 		margin-right: 0 !important;
 		border-color: #860001 !important;
@@ -694,13 +706,8 @@ visibility: visible;
 		display: initial;
 	}
 
-	#lang_sel_list {
+	#lang_sel_list{
 		margin-top: 10px;
-	}
-
-	#car-sidebar {
-		display: none;
-
 	}
 
 	.arch-cars-ord-b{
@@ -717,12 +724,34 @@ visibility: visible;
 
 }
 
+
+
 @media screen and (max-width: 380px){
 	.services-section a{
 		font-size: 26px;
 	}
 	.arch-car-table{
 		font-size: 12px;
+	}
+	.table-car-info{
+		font-size: 9px;
+	}
+
+	.table-car-info-extra th{
+		padding: 1px 0 !important;
+	}
+
+	.table-car-info-extra td{
+		padding: 1px 0 !important;
+	}
+
+}
+
+
+@media screen and (max-width: 767px){
+		.lang_sel_list_horizontal{
+		float: right;
+    	top: -35px;
 	}
 }
 

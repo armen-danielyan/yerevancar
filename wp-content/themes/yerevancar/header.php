@@ -17,13 +17,13 @@
     <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
     <title><?php wp_title( '|', true, 'right' ); bloginfo(); ?></title>
 
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php bloginfo( 'url' ); ?>/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php bloginfo( 'url' ); ?>/favicon.ico" type="image/x-icon">
 
     <?php wp_head(); ?>
 </head>
 <body>
-    <?php //include_once('incl/analyticstracking.php'); ?>
+    <?php include_once('incl/analyticstracking.php'); ?>
     <div class="container header-section">
         <header>
             <div class="row">
@@ -38,7 +38,7 @@
                         <div class="form-group  search-section">
                             <div class="input-group">
                                 <section id="search">
-                                    <label for="search-input"><a href="#"><i class="fa fa-search"></i></a></label>
+                                    <label for="search-input"><i class="fa fa-search"></i></label>
                                     <input type="text" class="search form-control" value="<?php echo get_search_query(); ?>" name="s" placeholder="<?php _e( 'Search', 'yerevancar' ); ?>">
                                 </section>
                             </div>
