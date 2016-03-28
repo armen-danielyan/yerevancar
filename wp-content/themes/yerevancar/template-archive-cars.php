@@ -28,17 +28,31 @@
                     )
                 );
                 $carsQuery = new WP_Query( $carsArchiveArgs );
-                if($carsQuery->have_posts()): while($carsQuery->have_posts()): $carsQuery->the_post(); ?>
+                if($carsQuery->have_posts()): while($carsQuery->have_posts()): $carsQuery->the_post();
+                    $postID = get_the_ID();
+                    $galleryIds = get_post_meta($postID, '_YC_product_gallery_ids', true);
+                    $galleryIdsArr = explode( ',', $galleryIds );
+                    $thumbID = get_post_thumbnail_id( $postID );
+                    $galleryIdsArr = array_diff( $galleryIdsArr, array($thumbID) );
+                    ?>
                     <div class="row arch-car-rows">
                         <div class="col-sm-5" id="cars-col-5">
-                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'large-thumb', array( 'class' => 'img-responsive' ) ); ?></a>
+                            <?php
+                            foreach($galleryIdsArr as $galleryId) { ?>
+                                <a class="fancybox" href="<?php echo wp_get_attachment_image_src( $galleryId, 'extra-large-thumb' )[0]; ?>" style="display:none" rel="<?php echo 'gallery' . $iter; ?>">
+                                    <?php echo wp_get_attachment_image( $galleryId, 'large-thumb', false, array( 'class' => 'img-responsive' ) ); ?>
+                                </a>
+                            <?php }
+                            $thumbSrc = wp_get_attachment_image_src( $thumbID, 'extra-large-thumb' ); ?>
+                            <a class="fancybox" href="<?php echo $thumbSrc[0]; ?>" rel="<?php echo 'gallery' . $iter; ?>">
+                                <?php the_post_thumbnail( 'large-thumb', array( 'class' => 'img-responsive' ) ); ?>
+                            </a>
                         </div>
 
                         <div class="col-sm-7">
                             <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
                             <?php
                             $car = [];
-                            $postID = get_the_ID();
 
                             $car['color']            = get_post_meta($postID, '_YC_color', true);
                             $car['year']             = get_post_meta($postID, '_YC_year', true);
@@ -54,11 +68,36 @@
                             $car['body']             = get_post_meta($postID, '_YC_body', true);
                             $car['cylinders']        = get_post_meta($postID, '_YC_cylinders', true);
                             $car['trailer']          = get_post_meta($postID, '_YC_trailer', true);
+
+                            $wedding = get_post_meta($postID, '_YC_wedding', true);
+                            $driverWith = get_post_meta($postID, '_YC_with_driver', true);
+                            $driverWithout = get_post_meta($postID, '_YC_without_driver', true);
+
+                            $weddingPrice['1-2'] = get_post_meta($postID, '_YC_wedding_1-2', true);
+                            $weddingPrice['3-4'] = get_post_meta($postID, '_YC_wedding_3-4', true);
+                            $weddingPrice['5-7'] = get_post_meta($postID, '_YC_wedding_5-7', true);
+                            $weddingPrice['8-12'] = get_post_meta($postID, '_YC_wedding_8-12', true);
+                            $weddingPrice['13-30'] = get_post_meta($postID, '_YC_wedding_13-30', true);
+                            $weddingPrice['outofcity'] = get_post_meta($postID, '_YC_wedding_outofcity', true);
+
+                            $driverWithPrice['1-2'] = get_post_meta($postID, '_YC_driverwith_1-2', true);
+                            $driverWithPrice['3-4'] = get_post_meta($postID, '_YC_driverwith_3-4', true);
+                            $driverWithPrice['5-7'] = get_post_meta($postID, '_YC_driverwith_5-7', true);
+                            $driverWithPrice['8-12'] = get_post_meta($postID, '_YC_driverwith_8-12', true);
+                            $driverWithPrice['13-30'] = get_post_meta($postID, '_YC_driverwith_13-30', true);
+                            $driverWithPrice['outofcity'] = get_post_meta($postID, '_YC_driverwith_outofcity', true);
+
+                            $driverWithoutPrice['1-2'] = get_post_meta($postID, '_YC_driverwithout_1-2', true);
+                            $driverWithoutPrice['3-4'] = get_post_meta($postID, '_YC_driverwithout_3-4', true);
+                            $driverWithoutPrice['5-7'] = get_post_meta($postID, '_YC_driverwithout_5-7', true);
+                            $driverWithoutPrice['8-12'] = get_post_meta($postID, '_YC_driverwithout_8-12', true);
+                            $driverWithoutPrice['13-30'] = get_post_meta($postID, '_YC_driverwithout_13-30', true);
+                            $driverWithoutPrice['outofcity'] = get_post_meta($postID, '_YC_driverwithout_outofcity', true);
                             ?>
                             <table class="table table-bordered table-car-info table-car-info-extra">
                                 <tbody>
                                 <tr>
-                                    <th colspan="4"><?php _e( 'Description', 'yerevancar' ); if($driverWith && !$driverWithout && !$wedding) echo ' (' . __( 'This vehicle is provided only with driver', 'yerevancar' ) . ')'; ?></th>
+                                    <th colspan="4"><?php _e( 'Description', 'yerevancar' ); if(!$driverWithout) echo ' (' . __( 'This vehicle is provided only with driver', 'yerevancar' ) . ')'; ?></th>
                                 </tr>
                                 <tr>
                                     <th><?php _e( 'Year', 'yerevancar' ); ?></th>
@@ -105,31 +144,6 @@
                             </table>
 
                             <?php
-                            $wedding = get_post_meta($postID, '_YC_wedding', true);
-                            $driverWith = get_post_meta($postID, '_YC_with_driver', true);
-                            $driverWithout = get_post_meta($postID, '_YC_without_driver', true);
-
-                            $weddingPrice['1-2'] = get_post_meta($postID, '_YC_wedding_1-2', true);
-                            $weddingPrice['3-4'] = get_post_meta($postID, '_YC_wedding_3-4', true);
-                            $weddingPrice['5-7'] = get_post_meta($postID, '_YC_wedding_5-7', true);
-                            $weddingPrice['8-12'] = get_post_meta($postID, '_YC_wedding_8-12', true);
-                            $weddingPrice['13-30'] = get_post_meta($postID, '_YC_wedding_13-30', true);
-                            $weddingPrice['outofcity'] = get_post_meta($postID, '_YC_wedding_outofcity', true);
-
-                            $driverWithPrice['1-2'] = get_post_meta($postID, '_YC_driverwith_1-2', true);
-                            $driverWithPrice['3-4'] = get_post_meta($postID, '_YC_driverwith_3-4', true);
-                            $driverWithPrice['5-7'] = get_post_meta($postID, '_YC_driverwith_5-7', true);
-                            $driverWithPrice['8-12'] = get_post_meta($postID, '_YC_driverwith_8-12', true);
-                            $driverWithPrice['13-30'] = get_post_meta($postID, '_YC_driverwith_13-30', true);
-                            $driverWithPrice['outofcity'] = get_post_meta($postID, '_YC_driverwith_outofcity', true);
-
-                            $driverWithoutPrice['1-2'] = get_post_meta($postID, '_YC_driverwithout_1-2', true);
-                            $driverWithoutPrice['3-4'] = get_post_meta($postID, '_YC_driverwithout_3-4', true);
-                            $driverWithoutPrice['5-7'] = get_post_meta($postID, '_YC_driverwithout_5-7', true);
-                            $driverWithoutPrice['8-12'] = get_post_meta($postID, '_YC_driverwithout_8-12', true);
-                            $driverWithoutPrice['13-30'] = get_post_meta($postID, '_YC_driverwithout_13-30', true);
-                            $driverWithoutPrice['outofcity'] = get_post_meta($postID, '_YC_driverwithout_outofcity', true);
-
                             $lendType = [];
                             if($wedding) {$lendType['Wedding'] = $weddingPrice;}
                             if($driverWith) {$lendType['With Driver'] = $driverWithPrice;}
@@ -231,6 +245,15 @@
             $("#product-more-details-" + productID).slideDown("fast");
         })
     })
+</script>
+
+<script>
+    jQuery(document).ready(function ($) {
+        $(".fancybox").fancybox({
+            openEffect: 'none',
+            closeEffect: 'none'
+        });
+    });
 </script>
 
 <?php get_footer(); ?>

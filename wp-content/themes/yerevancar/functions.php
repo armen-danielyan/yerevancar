@@ -601,13 +601,13 @@ function orderCalculator() {
 
             $difDate = $dateT - $dateF;
             $dif = floor($difDate/(60*60*24));
+            if(!$dif) $dif = 1;
 
             $otherServicePrice *= $dif;
 
-            $maxDay = ($lentType == 'Wedding') ? 2 : 30;
-            if($dif <= $maxDay) {
-                $priceByDays = getPriceByDays($lentType, $dif, $productID);
-                $totalPrice = $otherServicePrice + $priceByDays;
+            if($dif <= 30) {
+                $priceByDays = (int)getPriceByDays($lentType, $dif, $productID);
+                $totalPrice = $otherServicePrice + ($priceByDays * $dif);
             } else {
                 $priceByDays = 1;
                 $totalPrice = $otherServicePrice;
@@ -628,7 +628,6 @@ function orderCalculator() {
 }
 
 function getPriceByDays( $l, $d, $i ) {
-    $res = 0;
     if($l == 'Wedding') {
         if($d >= 1 && $d <= 2) { $res = get_post_meta($i, '_YC_wedding_1-2', true); }
         elseif($d >= 3 && $d <= 4) { $res = get_post_meta($i, '_YC_wedding_3-4', true); }
@@ -648,7 +647,11 @@ function getPriceByDays( $l, $d, $i ) {
         elseif($d >= 8 && $d <= 12) { $res = get_post_meta($i, '_YC_driverwithout_8-12', true); }
         elseif($d >= 13 && $d <= 30) { $res = get_post_meta($i, '_YC_driverwithout_13-30', true); }
     }
-    return $res * $d;
+    if(!$res) {
+        return 1;
+    } else {
+        return $res;
+    }
 }
 
 /**

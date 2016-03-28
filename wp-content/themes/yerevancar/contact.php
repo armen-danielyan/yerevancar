@@ -70,12 +70,12 @@
     </main>
 
     <script>
-        var myCenter = new google.maps.LatLng(40.1922232, 44.5043868);
+        var myCenter = new google.maps.LatLng(40.1923384, 44.5004547);
 
         function initialize() {
             var mapProp = {
                 center: myCenter,
-                zoom: 15,
+                zoom: 17,
                 scrollwheel: false,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };

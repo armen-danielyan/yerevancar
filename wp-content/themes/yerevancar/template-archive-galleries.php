@@ -45,6 +45,8 @@
 
                             <div class="col-sm-4">
                                 <?php $galleryFullIdsArr = explode( ',', $galleryFullIds );
+                                $thumbID = get_post_thumbnail_id( $postID );
+                                $galleryFullIdsArr = array_diff( $galleryFullIdsArr, array($thumbID) );
                                 $i = 0;
                                 foreach($galleryFullIdsArr as $galleryFullId) { ?>
                                     <a class="fancybox" title="<?php the_title(); ?>" data-url="<?php the_permalink(); ?>" style="display:none" rel="<?php echo 'gallery' . $gal; ?>" href="<?php echo wp_get_attachment_image_src( $galleryFullId, 'extra-large-thumb' )[0]; ?>">
@@ -52,7 +54,7 @@
                                     </a>
                                     <?php $i++;
                                 }
-                                $thumbSrc = wp_get_attachment_image_src( get_post_thumbnail_id( $postID ), 'extra-large-thumb' ); ?>
+                                $thumbSrc = wp_get_attachment_image_src( $thumbID, 'extra-large-thumb' ); ?>
                                 <a class="fancybox" title="<?php the_title(); ?>" data-url="<?php the_permalink(); ?>" href="<?php echo $thumbSrc[0]; ?>" rel="<?php echo 'gallery' . $gal; ?>">
                                     <span class="gal-icon"></span>
                                     <?php the_post_thumbnail( 'large-thumb', array( 'class' => 'img-responsive gal-thumbnail' ) ); ?>

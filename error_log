@@ -1,0 +1,154 @@
+[14-Mar-2016 06:54:36 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/index.php on line 1
+[14-Mar-2016 06:54:54 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/index.php on line 1
+[14-Mar-2016 09:13:51 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[14-Mar-2016 09:18:44 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[14-Mar-2016 11:49:35 UTC] PHP Fatal error:  Cannot redeclare YCSpecification() (previously declared in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/functions.php:242) in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/functions.php on line 403
+[14-Mar-2016 12:04:28 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[14-Mar-2016 12:05:41 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[14-Mar-2016 12:09:02 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[14-Mar-2016 14:23:43 UTC] PHP Warning:  Illegal offset type in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/single-cars.php on line 63
+[14-Mar-2016 15:51:10 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[14-Mar-2016 15:51:15 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[14-Mar-2016 20:24:58 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[15-Mar-2016 08:52:09 UTC] PHP Fatal error:  Cannot redeclare LoadScriptsStyles() (previously declared in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/functions.php:9) in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/single-cars.php on line 13
+[15-Mar-2016 09:32:33 UTC] PHP Parse error:  syntax error, unexpected '242' (T_LNUMBER) in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/contact.php on line 33
+[17-Mar-2016 08:22:24 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[17-Mar-2016 08:22:25 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[17-Mar-2016 08:23:25 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[17-Mar-2016 08:23:26 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[17-Mar-2016 08:23:43 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[17-Mar-2016 08:23:44 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[17-Mar-2016 08:24:03 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[17-Mar-2016 08:24:04 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[18-Mar-2016 13:33:05 UTC] PHP Fatal error:  Cannot use object of type WP_Post as array in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/custom-sidebar.php on line 10
+[18-Mar-2016 13:34:50 UTC] PHP Fatal error:  Cannot use object of type WP_Post as array in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/custom-sidebar.php on line 12
+[21-Mar-2016 06:06:27 UTC] PHP Warning:  explode() expects at least 2 parameters, 1 given in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/template-archive-galleries.php on line 26
+[21-Mar-2016 06:06:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/template-archive-galleries.php on line 27
+[21-Mar-2016 06:06:27 UTC] PHP Warning:  explode() expects at least 2 parameters, 1 given in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/template-archive-galleries.php on line 26
+[21-Mar-2016 06:06:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/template-archive-galleries.php on line 27
+[21-Mar-2016 06:06:27 UTC] PHP Warning:  explode() expects at least 2 parameters, 1 given in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/template-archive-galleries.php on line 26
+[21-Mar-2016 06:06:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/template-archive-galleries.php on line 27
+[21-Mar-2016 06:06:27 UTC] PHP Warning:  explode() expects at least 2 parameters, 1 given in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/template-archive-galleries.php on line 26
+[21-Mar-2016 06:06:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/template-archive-galleries.php on line 27
+[21-Mar-2016 06:06:27 UTC] PHP Warning:  explode() expects at least 2 parameters, 1 given in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/template-archive-galleries.php on line 26
+[21-Mar-2016 06:06:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/template-archive-galleries.php on line 27
+[21-Mar-2016 06:06:27 UTC] PHP Warning:  explode() expects at least 2 parameters, 1 given in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/template-archive-galleries.php on line 26
+[21-Mar-2016 06:06:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/template-archive-galleries.php on line 27
+[21-Mar-2016 06:06:27 UTC] PHP Warning:  explode() expects at least 2 parameters, 1 given in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/template-archive-galleries.php on line 26
+[21-Mar-2016 06:06:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/template-archive-galleries.php on line 27
+[21-Mar-2016 06:06:27 UTC] PHP Warning:  explode() expects at least 2 parameters, 1 given in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/template-archive-galleries.php on line 26
+[21-Mar-2016 06:06:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/template-archive-galleries.php on line 27
+[21-Mar-2016 06:06:27 UTC] PHP Warning:  explode() expects at least 2 parameters, 1 given in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/template-archive-galleries.php on line 26
+[21-Mar-2016 06:06:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/template-archive-galleries.php on line 27
+[21-Mar-2016 07:38:04 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[21-Mar-2016 07:38:07 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[21-Mar-2016 07:38:12 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[22-Mar-2016 08:04:01 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[22-Mar-2016 11:18:07 UTC] PHP Warning:  simplexml_load_file(): http://static.feed.rbc.ru/rbc/internalll/rss.rbc.ru/autonews.ru/mainnews.rss:1: parser error : Document is empty in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/custom-sidebar.php on line 29
+[22-Mar-2016 11:18:07 UTC] PHP Warning:  simplexml_load_file():  in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/custom-sidebar.php on line 29
+[22-Mar-2016 11:18:07 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/custom-sidebar.php on line 29
+[22-Mar-2016 11:18:07 UTC] PHP Warning:  simplexml_load_file(): http://static.feed.rbc.ru/rbc/internalll/rss.rbc.ru/autonews.ru/mainnews.rss:1: parser error : Start tag expected, '&lt;' not found in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/custom-sidebar.php on line 29
+[22-Mar-2016 11:18:07 UTC] PHP Warning:  simplexml_load_file():  in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/custom-sidebar.php on line 29
+[22-Mar-2016 11:18:07 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/custom-sidebar.php on line 29
+[22-Mar-2016 11:20:16 UTC] PHP Warning:  simplexml_load_file(): http://static.feed.rbc.ru/rbc/internalll/rss.rbc.ru/autonews.ru/mainnews.rss:1: parser error : Document is empty in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/custom-sidebar.php on line 30
+[22-Mar-2016 11:20:16 UTC] PHP Warning:  simplexml_load_file():  in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/custom-sidebar.php on line 30
+[22-Mar-2016 11:20:16 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/custom-sidebar.php on line 30
+[22-Mar-2016 11:20:16 UTC] PHP Warning:  simplexml_load_file(): http://static.feed.rbc.ru/rbc/internalll/rss.rbc.ru/autonews.ru/mainnews.rss:1: parser error : Start tag expected, '&lt;' not found in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/custom-sidebar.php on line 30
+[22-Mar-2016 11:20:16 UTC] PHP Warning:  simplexml_load_file():  in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/custom-sidebar.php on line 30
+[22-Mar-2016 11:20:16 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/custom-sidebar.php on line 30
+[22-Mar-2016 11:39:00 UTC] PHP Fatal error:  Call to undefined method WP_Error::get_item_quantity() in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/custom-sidebar.php on line 33
+[22-Mar-2016 11:54:38 UTC] PHP Warning:  simplexml_load_file(): http://static.feed.rbc.ru/rbc/internall/rss.rbc.ru/autonews.ru/mainnews.rss:1: parser error : Document is empty in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/custom-sidebar.php on line 29
+[22-Mar-2016 11:54:38 UTC] PHP Warning:  simplexml_load_file():  in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/custom-sidebar.php on line 29
+[22-Mar-2016 11:54:38 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/custom-sidebar.php on line 29
+[22-Mar-2016 11:54:38 UTC] PHP Warning:  simplexml_load_file(): http://static.feed.rbc.ru/rbc/internall/rss.rbc.ru/autonews.ru/mainnews.rss:1: parser error : Start tag expected, '&lt;' not found in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/custom-sidebar.php on line 29
+[22-Mar-2016 11:54:38 UTC] PHP Warning:  simplexml_load_file():  in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/custom-sidebar.php on line 29
+[22-Mar-2016 11:54:38 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/custom-sidebar.php on line 29
+[24-Mar-2016 08:54:21 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 09:04:00 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 09:46:09 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 09:50:08 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 09:56:21 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 09:57:03 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 10:25:38 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 10:25:41 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 10:25:48 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 10:31:21 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 10:49:30 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 10:49:47 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 10:49:58 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 10:50:17 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 10:51:17 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 11:10:31 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 11:10:41 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 11:11:19 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 11:11:50 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 11:21:31 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 11:31:49 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 11:44:29 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 11:48:04 UTC] PHP Warning:  include_once(/incl/analyticstracking.php): failed to open stream: No such file or directory in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/header.php on line 27
+[24-Mar-2016 11:48:04 UTC] PHP Warning:  include_once(): Failed opening '/incl/analyticstracking.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/header.php on line 27
+[24-Mar-2016 11:48:10 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 11:50:36 UTC] PHP Warning:  include_once(): http:// wrapper is disabled in the server configuration by allow_url_include=0 in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/header.php on line 27
+[24-Mar-2016 11:50:36 UTC] PHP Warning:  include_once(http://192.254.178.102/~homepage/projects/yerevancar/wp-content/themes/yerevancar/incl/analyticstracking.php): failed to open stream: no suitable wrapper could be found in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/header.php on line 27
+[24-Mar-2016 11:50:36 UTC] PHP Warning:  include_once(): Failed opening 'http://192.254.178.102/~homepage/projects/yerevancar/wp-content/themes/yerevancar/incl/analyticstracking.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/header.php on line 27
+[24-Mar-2016 11:52:11 UTC] PHP Warning:  include_once(/incl/analyticstracking.php): failed to open stream: No such file or directory in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/header.php on line 27
+[24-Mar-2016 11:52:11 UTC] PHP Warning:  include_once(): Failed opening '/incl/analyticstracking.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/header.php on line 27
+[24-Mar-2016 12:00:30 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 12:16:02 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 12:21:49 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 12:52:16 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 12:58:35 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 13:01:22 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 13:16:38 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 13:24:03 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 13:28:35 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 13:37:13 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 14:05:03 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 14:11:40 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 14:38:36 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 14:38:59 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 14:40:43 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 14:41:35 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 14:41:53 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 14:42:02 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 14:42:09 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 14:42:18 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 14:42:35 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 14:42:46 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 14:43:38 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 14:45:30 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 14:55:02 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/homepage/public_html/projects/yerevancar/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 15:18:04 UTC] PHP Fatal error:  Call to undefined function putRevSlider() in /home/yerevancar/public_html/wp-content/themes/yerevancar/home.php on line 13
+[24-Mar-2016 16:07:52 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 16:25:12 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 16:29:44 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 16:59:40 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 16:59:41 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 17:46:17 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 17:52:42 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 18:26:43 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 18:33:03 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 18:55:18 UTC] PHP Warning:  preg_match() expects parameter 2 to be string, array given in /home/yerevancar/public_html/wp-includes/class.wp-scripts.php on line 171
+[24-Mar-2016 18:55:18 UTC] PHP Warning:  strpos() expects parameter 1 to be string, array given in /home/yerevancar/public_html/wp-includes/class.wp-scripts.php on line 171
+[24-Mar-2016 20:39:51 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 20:41:45 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 20:41:45 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 23:18:45 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[24-Mar-2016 23:23:53 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[25-Mar-2016 01:50:15 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[25-Mar-2016 01:53:15 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[25-Mar-2016 01:57:43 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[25-Mar-2016 02:35:32 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[25-Mar-2016 03:26:11 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[25-Mar-2016 03:43:22 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[25-Mar-2016 03:43:23 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[25-Mar-2016 04:15:53 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[25-Mar-2016 06:15:52 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[25-Mar-2016 06:15:52 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[25-Mar-2016 06:15:53 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[25-Mar-2016 06:15:55 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[25-Mar-2016 06:15:56 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[25-Mar-2016 06:15:57 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[25-Mar-2016 06:15:58 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[25-Mar-2016 06:15:59 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1
+[25-Mar-2016 06:16:00 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/yerevancar/public_html/wp-content/themes/yerevancar/404.php on line 1

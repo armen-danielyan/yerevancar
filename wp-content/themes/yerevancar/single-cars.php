@@ -11,20 +11,28 @@
                     <div id="car-gallery">
                         <?php $postID = get_the_ID();
                         $galleryIds = get_post_meta($postID, '_YC_product_gallery_ids', true);
+                        $thumbID = get_post_thumbnail_id( $postID );
                         if($galleryIds) {
-                            $galleryIdsArr = explode( ',', $galleryIds);
+                            $galleryIdsArr = explode( ',', $galleryIds );
+                            $galleryIdsArr = array_diff( $galleryIdsArr, array($thumbID) );
                             foreach($galleryIdsArr as $galleryId) { ?>
                                 <a class="fancybox" href="<?php echo wp_get_attachment_image_src( $galleryId, 'extra-large-thumb' )[0]; ?>" style="display:none" rel="gallery0">
                                     <?php echo wp_get_attachment_image( $galleryId, 'large-thumb', false, array( 'class' => 'img-responsive' ) ); ?>
                                 </a>
                             <?php }
                         }
-                        $thumbSrc = wp_get_attachment_image_src( get_post_thumbnail_id( $postID ), 'extra-large-thumb' ); ?>
+                        $thumbSrc = wp_get_attachment_image_src( $thumbID, 'extra-large-thumb' ); ?>
                         <a class="fancybox" href="<?php echo $thumbSrc[0]; ?>" rel="gallery0">
                             <?php the_post_thumbnail( 'large-thumb', array( 'class' => 'img-responsive' ) ); ?>
                         </a>
                     </div>
                 </div>
+
+                <?php $kk = array( 123, 456, 789, 954);
+                $bb = array_diff($kk, array(456));
+                //var_dump($kk);
+                //var_dump($bb);
+                ?>
 
                 <div class="col-sm-8 col-md-6">
                     <h1><?php the_title(); ?></h1>
@@ -85,7 +93,7 @@
                     <table class="table table-bordered table-car-info table-car-info-extra" data-productid="<?php echo $postID; ?>">
                         <tbody>
                             <tr>
-                                <th colspan="4"><?php _e( 'Description', 'yerevancar' ); if($driverWith && !$driverWithout && !$wedding) echo ' (' . __( 'This vehicle is provided only with driver', 'yerevancar' ) . ')'; ?></th>
+                                <th colspan="4"><?php _e( 'Description', 'yerevancar' ); if(!$driverWithout) echo ' (' . __( 'This vehicle is provided only with driver', 'yerevancar' ) . ')'; ?></th>
                             </tr>
                             <tr>
                                 <th><?php _e( 'Year', 'yerevancar' ); ?></th>
@@ -130,77 +138,81 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div class="row">
-                        <?php $checkIndex = 0;
-                        foreach($lendType as $lendKey => $lendValue) { ?>
-                            <div class="col-sm-4">
-                                <table class="table table-bordered table-car-info table-car-info-extra">
-                                    <tbody>
-                                    <tr>
-                                        <?php
-                                        $lendTypeLabelWedding = __( 'Wedding', 'yerevancar' );
-                                        $lendTypeLabelWithoutDriver = __( 'Without Driver', 'yerevancar' );
-                                        $lendTypeLabelWithDriver = __( 'With Driver', 'yerevancar' );
+                    <div id="orderForm">
+                        <div id="ajax-loader-icon">
+                            <div id="loader-icon"></div>
+                        </div>
+                        <div class="row">
+                            <?php $checkIndex = 0;
+                            foreach($lendType as $lendKey => $lendValue) { ?>
+                                <div class="col-sm-4">
+                                    <table class="table table-bordered table-car-info table-car-info-extra">
+                                        <tbody>
+                                        <tr>
+                                            <?php
+                                            $lendTypeLabelWedding = __( 'Wedding', 'yerevancar' );
+                                            $lendTypeLabelWithoutDriver = __( 'Without Driver', 'yerevancar' );
+                                            $lendTypeLabelWithDriver = __( 'With Driver', 'yerevancar' );
 
-                                        if($lendKey == 'Wedding') {
-                                            $lendTypeLabel = $lendTypeLabelWedding;
-                                        } elseif($lendKey == 'Without Driver') {
-                                            $lendTypeLabel = $lendTypeLabelWithoutDriver;
-                                        } elseif($lendKey == 'With Driver') {
-                                            $lendTypeLabel = $lendTypeLabelWithDriver;
-                                        } else {
-                                            $lendTypeLabel = '';
-                                        } ?>
-                                        <th colspan="2"><input class="lentTypeForm" type="radio" name="lent-type" value="<?php echo $lendKey; ?>" <?php if($checkIndex == 0) echo 'checked'; ?>> <?php echo $lendTypeLabel; if($lendKey == 'Without Driver' || $lendKey == 'With Driver') echo '<br>(' . __( '24 hours', 'yerevancar' ) . ')'; ?></th>
-                                    </tr>
-                                    <tr>
-                                        <th><?php _e( 'Days', 'yerevancar' ); ?></th>
-                                        <th><?php _e( 'Price', 'yerevancar' ); ?></th>
-                                    </tr>
-                                    <?php if($lendValue['1-2']): ?>
-                                        <tr>
-                                            <th>1 - 2</th>
-                                            <td><?php echo $lendValue['1-2']; ?></td>
+                                            if($lendKey == 'Wedding') {
+                                                $lendTypeLabel = $lendTypeLabelWedding;
+                                            } elseif($lendKey == 'Without Driver') {
+                                                $lendTypeLabel = $lendTypeLabelWithoutDriver;
+                                            } elseif($lendKey == 'With Driver') {
+                                                $lendTypeLabel = $lendTypeLabelWithDriver;
+                                            } else {
+                                                $lendTypeLabel = '';
+                                            } ?>
+                                            <th colspan="2"><input class="lentTypeForm" type="radio" name="lent-type" value="<?php echo $lendKey; ?>" <?php if($checkIndex == 0) echo 'checked'; ?>> <?php echo $lendTypeLabel; if($lendKey == 'Without Driver' || $lendKey == 'With Driver') echo '<br>(' . __( '24 hours', 'yerevancar' ) . ')'; ?></th>
                                         </tr>
-                                    <?php endif; ?>
-                                    <?php if($lendValue['3-4']): ?>
                                         <tr>
-                                            <th>3 - 4</th>
-                                            <td><?php echo $lendValue['3-4']; ?></td>
+                                            <th><?php _e( 'Days', 'yerevancar' ); ?></th>
+                                            <th><?php _e( 'Price', 'yerevancar' ); ?></th>
                                         </tr>
-                                    <?php endif; ?>
-                                    <?php if($lendValue['5-7']): ?>
-                                        <tr>
-                                            <th>5 - 7</th>
-                                            <td><?php echo $lendValue['5-7']; ?></td>
-                                        </tr>
-                                    <?php endif; ?>
-                                    <?php if($lendValue['8-12']): ?>
-                                        <tr>
-                                            <th>8 - 12</th>
-                                            <td><?php echo $lendValue['8-12']; ?></td>
-                                        </tr>
-                                    <?php endif; ?>
-                                    <?php if($lendValue['13-30']): ?>
-                                        <tr>
-                                            <th>13 - 30</th>
-                                            <td><?php echo $lendValue['13-30']; ?></td>
-                                        </tr>
-                                    <?php endif; ?>
-                                    <?php if($lendValue['outofcity']): ?>
-                                        <tr>
-                                            <th><?php _e( 'Out of city, per 100km', 'yerevancar' ); ?></th>
-                                            <td><?php echo $lendValue['outofcity']; ?></td>
-                                        </tr>
-                                    <?php endif; ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <?php $checkIndex++;
-                        } ?>
-                    </div>
+                                        <?php if($lendValue['1-2']): ?>
+                                            <tr>
+                                                <th>1 - 2</th>
+                                                <td><?php echo $lendValue['1-2']; ?></td>
+                                            </tr>
+                                        <?php endif; ?>
+                                        <?php if($lendValue['3-4']): ?>
+                                            <tr>
+                                                <th>3 - 4</th>
+                                                <td><?php echo $lendValue['3-4']; ?></td>
+                                            </tr>
+                                        <?php endif; ?>
+                                        <?php if($lendValue['5-7']): ?>
+                                            <tr>
+                                                <th>5 - 7</th>
+                                                <td><?php echo $lendValue['5-7']; ?></td>
+                                            </tr>
+                                        <?php endif; ?>
+                                        <?php if($lendValue['8-12']): ?>
+                                            <tr>
+                                                <th>8 - 12</th>
+                                                <td><?php echo $lendValue['8-12']; ?></td>
+                                            </tr>
+                                        <?php endif; ?>
+                                        <?php if($lendValue['13-30']): ?>
+                                            <tr>
+                                                <th>13 - 30</th>
+                                                <td><?php echo $lendValue['13-30']; ?></td>
+                                            </tr>
+                                        <?php endif; ?>
+                                        <?php if($lendValue['outofcity']): ?>
+                                            <tr>
+                                                <th><?php _e( 'Out of city, per 100km', 'yerevancar' ); ?></th>
+                                                <td><?php echo $lendValue['outofcity']; ?></td>
+                                            </tr>
+                                        <?php endif; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <?php $checkIndex++;
+                            } ?>
+                        </div>
 
-                    <div id="orderForm" style="display:none">
+
                         <div class="row">
                             <div class="col-sm-12">
                                 <table class="table table-bordered table-car-info">
@@ -210,10 +222,11 @@
                                             <th><?php _e( 'Daily Price', 'yerevancar' ); ?></th>
                                         </tr>
                                         <?php
-                                        $excludeServiceIdPhoto = icl_object_id(225, 'cars', true);
+                                        $excludeServicePhotoId = icl_object_id(225, 'services', true);
+                                        $excludeServiceTransferId = icl_object_id(302, 'services', true);
                                         $argsServices = array(
                                             'post_type'     => 'services',
-                                            'post__not_in'  => array( $excludeServiceIdPhoto )
+                                            'post__not_in'  => array( $excludeServicePhotoId, $excludeServiceTransferId )
                                         );
                                         $servicesQuery = new WP_Query($argsServices);
                                         if($servicesQuery->have_posts()): while($servicesQuery->have_posts()): $servicesQuery->the_post();
@@ -321,8 +334,7 @@
 
                     <div class="row">
                         <div class="col-sm-12">
-                            <button class="btn btn-danger" type="button" id="btnOrder" ><?php _e( 'Order', 'yerevancar' ); ?></button>
-                            <button class="btn btn-danger" type="button" id="btnSend" style="display:none"><?php _e( 'Send', 'yerevancar' ); ?></button>
+                            <button class="btn btn-danger" type="button" id="btnSend"><?php _e( 'Send', 'yerevancar' ); ?></button>
                         </div>
                     </div>
 
@@ -330,6 +342,7 @@
             </div>
         </section>
     </main>
+
     <script>
         jQuery(function($){
             $( "#dateFrom" ).datepicker({
@@ -365,12 +378,6 @@
                 $("#userLicenseAgreementForm").fadeIn("slow");
             }
 
-            $("#btnOrder").on("click", function(){
-                $("#orderForm").fadeIn("slow");
-                $(this).css("display", "none");
-                $("#btnSend").fadeIn("slow");
-            });
-
             $(".lentTypeForm").change(function(){
                 lentType = $('input[name="lent-type"]:checked').val();
 
@@ -400,10 +407,13 @@
             });
 
             function orderResult() {
-                var action = "order_calculator";
-
                 dateFrom = $("#dateFrom").val();
                 dateTo = $("#dateTo").val();
+
+                if(!dateFrom || !dateTo) return;
+
+                $("#ajax-loader-icon").fadeIn("fast");
+                var action = "order_calculator";
 
                 var dataCalc = {
                     "action": action,
@@ -419,6 +429,7 @@
                     url: ajaxurl,
                     data: dataCalc,
                     success: function(data){
+                        $("#ajax-loader-icon").fadeOut("fast");
                         var resultOBJ = jQuery.parseJSON(data);
 
                         if(resultOBJ.dailyPrice > 1) {
@@ -453,7 +464,7 @@
             }
 
             $("#btnSend").on("click", function(){
-
+                $("#ajax-loader-icon").fadeIn("fast");
                 if(lentType == "Without Driver") {
                     if(!$("#userLicenseAgreement").is(":checked")) {
                         $("#status-success").fadeOut("slow");
@@ -490,6 +501,7 @@
                     url: ajaxurl,
                     data: dataMail,
                     success: function(data){
+                        $("#ajax-loader-icon").fadeOut("fast");
                         var resultOBJ = jQuery.parseJSON(data);
                         if(resultOBJ.status == "error") {
                             $("#status-success").fadeOut("slow");
