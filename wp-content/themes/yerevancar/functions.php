@@ -39,6 +39,16 @@ function adminLoadScriptsStyles() {
 
 
 /**
+ * Limit Excerpt
+ */
+
+function my_custom_excerpt_length( $default ) {
+    return 10;
+}
+add_filter( 'excerpt_length', 'my_custom_excerpt_length' );
+
+
+/**
  * Register Thumbnails
  */
 
@@ -101,7 +111,7 @@ function Create_Drivers_CPT() {
         'show_in_admin_bar'     => true,
         'can_export'            => true,
         'has_archive'           => true,
-        'exclude_from_search'   => false,
+        'exclude_from_search'   => true,
         'publicly_queryable'    => true,
         'capability_type'       => 'page'
     );
@@ -146,7 +156,7 @@ function Create_Services_CPT() {
         'show_in_admin_bar'     => true,
         'can_export'            => true,
         'has_archive'           => true,
-        'exclude_from_search'   => false,
+        'exclude_from_search'   => true,
         'publicly_queryable'    => true,
         'capability_type'       => 'page',
         'register_meta_box_cb'  => 'AddServicesMetaboxes'
@@ -375,6 +385,7 @@ function YCDriver() {
     $wedding = get_post_meta($post->ID, '_YC_wedding', true);
     $driverWith = get_post_meta($post->ID, '_YC_with_driver', true);
     $driverWithout = get_post_meta($post->ID, '_YC_without_driver', true);
+    $transfer = get_post_meta($post->ID, '_YC_transfer', true);
 
     $weddingPrice['1-2'] = get_post_meta($post->ID, '_YC_wedding_1-2', true);
     $weddingPrice['3-4'] = get_post_meta($post->ID, '_YC_wedding_3-4', true);
@@ -396,6 +407,8 @@ function YCDriver() {
     $driverWithoutPrice['8-12'] = get_post_meta($post->ID, '_YC_driverwithout_8-12', true);
     $driverWithoutPrice['13-30'] = get_post_meta($post->ID, '_YC_driverwithout_13-30', true);
     $driverWithoutPrice['outofcity'] = get_post_meta($post->ID, '_YC_driverwithout_outofcity', true);
+
+    $transferPrice = get_post_meta($post->ID, '_YC_transfer_price', true);
     ?>
 
     <table style="width: 100%; border: 1px solid #dddddd;">
@@ -410,6 +423,9 @@ function YCDriver() {
                 <th colspan="2" style="padding: 10px;">
                     <input type="checkbox" name="_YC_without_driver" value="without_driver" <?php checked( $driverWithout, 'without_driver' ); ?> /> Without Driver
                 </th>
+                <th style="padding: 10px;">
+                    <input type="checkbox" name="_YC_transfer" value="transfer" <?php checked( $transfer, 'transfer' ); ?> /> Transfer
+                </th>
             </tr>
             <tr style="background-color: #dddddd;">
                 <th>Days</th>
@@ -417,6 +433,7 @@ function YCDriver() {
                 <th>Days</th>
                 <th>Price</th>
                 <th>Days</th>
+                <th>Price</th>
                 <th>Price</th>
             </tr>
             <tr>
@@ -426,6 +443,7 @@ function YCDriver() {
                 <td><input type="text" name="_YC_driverwith_1-2" value="<?php echo $driverWithPrice['1-2']; ?>" class="widefat"></td>
                 <th>1 - 2</th>
                 <td><input type="text" name="_YC_driverwithout_1-2" value="<?php echo $driverWithoutPrice['1-2']; ?>" class="widefat"></td>
+                <td><input type="text" name="_YC_transfer_price" value="<?php echo $transferPrice; ?>" class="widefat"></td>
             </tr>
             <tr>
                 <th>3 - 4</th>
@@ -519,6 +537,7 @@ function SaveCarsMetaboxes($post_id, $post) {
     $carsMeta['_YC_wedding'] = $_POST['_YC_wedding'];
     $carsMeta['_YC_with_driver'] = $_POST['_YC_with_driver'];
     $carsMeta['_YC_without_driver'] = $_POST['_YC_without_driver'];
+    $carsMeta['_YC_transfer'] = $_POST['_YC_transfer'];
 
     $carsMeta['_YC_wedding_1-2'] = $_POST['_YC_wedding_1-2'];
     $carsMeta['_YC_wedding_3-4'] = $_POST['_YC_wedding_3-4'];
@@ -540,6 +559,8 @@ function SaveCarsMetaboxes($post_id, $post) {
     $carsMeta['_YC_driverwithout_8-12'] = $_POST['_YC_driverwithout_8-12'];
     $carsMeta['_YC_driverwithout_13-30'] = $_POST['_YC_driverwithout_13-30'];
     $carsMeta['_YC_driverwithout_outofcity'] = $_POST['_YC_driverwithout_outofcity'];
+
+    $carsMeta['_YC_transfer_price'] = $_POST['_YC_transfer_price'];
 
     $carsMeta['_YC_motor_power'] = $_POST['_YC_motor_power'];
     $carsMeta['_YC_max_speed'] = $_POST['_YC_max_speed'];
@@ -646,7 +667,10 @@ function getPriceByDays( $l, $d, $i ) {
         elseif($d >= 5 && $d <= 7) { $res = get_post_meta($i, '_YC_driverwithout_5-7', true); }
         elseif($d >= 8 && $d <= 12) { $res = get_post_meta($i, '_YC_driverwithout_8-12', true); }
         elseif($d >= 13 && $d <= 30) { $res = get_post_meta($i, '_YC_driverwithout_13-30', true); }
+    } elseif($l == 'Transfer'){
+        $res = get_post_meta($i, '_YC_transfer_price', true);
     }
+
     if(!$res) {
         return 1;
     } else {
@@ -754,4 +778,72 @@ function post_keywords() {
         $keywords = implode(', ', $post_keywords);
     }
     return $keywords;
+}
+
+
+/**
+ * Pagination
+ */
+
+function pagination($pages = '', $range = 3) {
+    $showitems = ($range * 2) + 1;
+    global $paged;
+    if (empty($paged)) $paged = 1;
+    if ($pages == '') {
+        global $wp_query;
+        $pages = $wp_query->max_num_pages;
+        if (!$pages) {
+            $pages = 1;
+        }
+    }
+    if (1 != $pages) {
+        echo '<div class="paged">';
+        if ($paged > 2 && $paged > $range + 1 && $showitems < $pages) echo '<a href="' . get_pagenum_link(1) . '">&laquo;</a>';
+        if ($paged > 1 && $showitems < $pages) echo "<a href='" . get_pagenum_link($paged - 1) . "'>&lsaquo;</a>";
+        for ($i = 1; $i <= $pages; $i++) {
+            if (1 != $pages && (!($i >= $paged + $range + 1 || $i <= $paged - $range - 1) || $pages <= $showitems)) {
+                echo ($paged == $i) ? '<span>' . $i . '</span>' : '<a href="' . get_pagenum_link($i) . '" >' . $i . '</a>';
+            }
+        }
+        if ($paged < $pages && $showitems < $pages) echo '<a href="' . get_pagenum_link($paged + 1) . '">&rsaquo;</a>';
+        if ($paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages) echo '<a href="' . get_pagenum_link($pages) . '">&raquo;</a>';
+        echo '</div>';
+    }
+}
+
+
+/**
+ * Include Tags Into Search Result
+ */
+
+add_filter( 'posts_search', 'my_smart_search', 500, 2 );
+function my_smart_search( $search, &$wp_query ) {
+    global $wpdb;
+
+    if ( empty( $search )) return $search;
+
+    $terms = $wp_query->query_vars[ 's' ];
+    $exploded = explode( ' ', $terms );
+    if( $exploded === FALSE || count( $exploded ) == 0 )
+        $exploded = array( 0 => $terms );
+
+    $search = '';
+    foreach( $exploded as $tag ) {
+        $search .= " AND (
+            (wp_posts.post_title LIKE '%$tag%')
+            OR (wp_posts.post_content LIKE '%$tag%')
+            OR EXISTS
+            (
+                SELECT * FROM wp_terms
+                INNER JOIN wp_term_taxonomy
+                    ON wp_term_taxonomy.term_id = wp_terms.term_id
+                INNER JOIN wp_term_relationships
+                    ON wp_term_relationships.term_taxonomy_id = wp_term_taxonomy.term_taxonomy_id
+                WHERE taxonomy = 'post_tag'
+                    AND object_id = wp_posts.ID
+                    AND wp_terms.name LIKE '%$tag%'
+            )
+        )";
+    }
+    return $search;
 }

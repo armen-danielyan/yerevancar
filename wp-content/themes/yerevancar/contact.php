@@ -6,13 +6,20 @@
 
 <?php get_header(); ?>
 
-<div id="fb-root"></div>
-    <script>(function (d, s, id) {
+    <?php if(ICL_LANGUAGE_CODE == 'hy') {
+        $currLang = 'hy_AM';
+    } elseif(ICL_LANGUAGE_CODE == 'ru') {
+        $currLang = 'ru_RU';
+    } else {
+        $currLang = 'en_US';
+    } ?>
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5";
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/<?php echo $currLang; ?>/sdk.js#xfbml=1&version=v2.5&appId=1131540440211178";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
@@ -44,16 +51,16 @@
                     <?php
                     if(ICL_LANGUAGE_CODE == 'hy') {
                         echo do_shortcode( '[contact-form-7 id="242" title="Form-am"]' );
-                    } elseif(ICL_LANGUAGE_CODE=='ru') {
+                    } elseif(ICL_LANGUAGE_CODE == 'ru') {
                         echo do_shortcode( '[contact-form-7 id="243" title="Form-ru"]' );
-                    } elseif(ICL_LANGUAGE_CODE=='en') {
+                    } elseif(ICL_LANGUAGE_CODE == 'en') {
                         echo do_shortcode( '[contact-form-7 id="244" title="Form-en"]' );
                     }
                     ?>
                 </div>
 
                 <div class="col-sm-6 text-center">
-                    <div class="fb-page" data-href="https://www.facebook.com/YerevanCar" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/YerevanCar"><a href="https://www.facebook.com/YerevanCar">Yerevan Car</a></blockquote></div></div>
+                    <div class="fb-page" data-href="https://www.facebook.com/YerevanCar" data-tabs="timeline" data-width="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/YerevanCar"><a href="https://www.facebook.com/YerevanCar">Yerevan Car</a></blockquote></div></div>
                 </div>
             </div>
         </section>
@@ -70,7 +77,7 @@
     </main>
 
     <script>
-        var myCenter = new google.maps.LatLng(40.1923384, 44.5004547);
+        var myCenter = new google.maps.LatLng(40.192390, 44.504019);
 
         function initialize() {
             var mapProp = {

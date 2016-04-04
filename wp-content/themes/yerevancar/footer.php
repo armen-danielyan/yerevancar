@@ -10,7 +10,7 @@
             </nav>
             <div class="row">
                 <div class="col-md-12">
-                    <address>© <?php echo date("Y"); ?> Powered by <a href="http://ilikeit.am" target="_blank">I LILE IT</a></address>
+                    <address>© <?php echo date("Y"); ?> Powered by <a href="http://ilikeit.am" target="_blank">I LIKE IT</a></address>
                 </div>
             </div>
         </footer>

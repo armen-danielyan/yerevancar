@@ -26,6 +26,21 @@
     <?php include_once('incl/analyticstracking.php'); ?>
     <div class="container header-section">
         <header>
+            <div class="row" id="header-top-menu">
+                <div class="col-sm-3 social-icons">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-odnoklassniki"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-6 mobile-numbers text-center">
+                    <div><i class="fa fa-phone"></i> +374 91 177979, +374 98 077979</div>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-sm-4" id="header-logo">
                     <a href="<?php bloginfo( 'url' ); ?>">
@@ -34,22 +49,28 @@
                 </div>
 
                 <div class="col-sm-3" id="header-search-box">
-                    <form method="get" class="form-inline" action="<?php bloginfo('home'); ?>/">
+                    <?php if(ICL_LANGUAGE_CODE == 'en') {
+                        $currLang = 'en';
+                    } elseif(ICL_LANGUAGE_CODE == 'ru') {
+                        $currLang = 'ru';
+                    } else {
+                        $currLang = 'hy';
+                    } ?>
+                    <form method="get" class="form-inline" action="<?php echo get_option('home') ?>/">
                         <div class="form-group  search-section">
                             <div class="input-group">
                                 <section id="search">
                                     <label for="search-input"><i class="fa fa-search"></i></label>
                                     <input type="text" class="search form-control" value="<?php echo get_search_query(); ?>" name="s" placeholder="<?php _e( 'Search', 'yerevancar' ); ?>">
+                                    <input type="hidden" name="lang" value="<?php echo $currLang; ?>">
                                 </section>
                             </div>
                         </div>
                     </form>
                 </div>
 
-                <div class="col-sm-3" id="header-phone">
-                    <span class="fa fa-phone"> +374 91 177979</span>
-                    <br>
-                    <span class="fa fa-phone"> +374 98 077979</span>
+                <div class="col-sm-3">
+
                 </div>
 
                 <div class="col-sm-2" id="header-lang-box">
@@ -57,7 +78,7 @@
                 </div>
             </div>
 
-            <nav class="navbar navbar-default car-navbar  no-border" role="navigation">
+            <nav class="navbar navbar-default car-navbar no-border" role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">

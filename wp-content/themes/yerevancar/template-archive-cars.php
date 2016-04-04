@@ -16,9 +16,11 @@
             <div class="col-sm-12 col-md-10">
                 <?php $iter = 0;
                 $carTermId = (isset($_GET['cartype'])) ? (int)$_GET['cartype'] : icl_object_id(9, 'category', true);
+                $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
                 $carsArchiveArgs = array(
                     'post_type'         => 'cars',
-                    'posts_per_page'    => -1,
+                    'posts_per_page'    => 6,
+                    'paged'             => $paged,
                     'tax_query'         => array(
                         array(
                             'taxonomy'  => 'types',
@@ -72,6 +74,7 @@
                             $wedding = get_post_meta($postID, '_YC_wedding', true);
                             $driverWith = get_post_meta($postID, '_YC_with_driver', true);
                             $driverWithout = get_post_meta($postID, '_YC_without_driver', true);
+                            $transfer = get_post_meta($postID, '_YC_transfer', true);
 
                             $weddingPrice['1-2'] = get_post_meta($postID, '_YC_wedding_1-2', true);
                             $weddingPrice['3-4'] = get_post_meta($postID, '_YC_wedding_3-4', true);
@@ -215,7 +218,23 @@
                                         </table>
                                     </div>
                                     <?php $checkIndex++;
-                                } ?>
+                                }
+
+                                if($transfer){
+                                    $transferPrice = get_post_meta($postID, '_YC_transfer_price', true); ?>
+                                    <div class="col-sm-12">
+                                        <table class="table table-bordered table-car-info table-car-info-extra">
+                                            <tbody>
+                                            <tr>
+                                                <th><?php _e( 'Airport pickups (Transfer)', 'yerevancar' ); ?></th>
+                                                <th><?php _e( 'Price', 'yerevancar' ); ?></th>
+                                                <td><?php echo $transferPrice; ?></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                <?php } ?>
+
                             </div>
 
                             <div class="row">
@@ -230,7 +249,11 @@
                         </div>
                     </div>
                     <?php $iter++;
-                endwhile; endif; ?>
+                endwhile; ?>
+                    <div class="row">
+                        <div class="col-sm-12"><?php pagination($carsQuery->max_num_pages); ?></div>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </section>

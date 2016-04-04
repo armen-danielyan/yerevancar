@@ -64,6 +64,8 @@
                     $driverWith = get_post_meta($postID, '_YC_with_driver', true);
                     $driverWithout = get_post_meta($postID, '_YC_without_driver', true);
 
+                    $transfer = get_post_meta($postID, '_YC_transfer', true);
+
                     $weddingPrice['1-2'] = get_post_meta($postID, '_YC_wedding_1-2', true);
                     $weddingPrice['3-4'] = get_post_meta($postID, '_YC_wedding_3-4', true);
                     $weddingPrice['5-7'] = get_post_meta($postID, '_YC_wedding_5-7', true);
@@ -209,7 +211,22 @@
                                     </table>
                                 </div>
                                 <?php $checkIndex++;
-                            } ?>
+                            }
+
+                            if($transfer){
+                                $transferPrice = get_post_meta($postID, '_YC_transfer_price', true); ?>
+                                <div class="col-sm-12">
+                                    <table class="table table-bordered table-car-info table-car-info-extra">
+                                        <tbody>
+                                            <tr>
+                                                <th><input class="lentTypeForm" type="radio" name="lent-type" value="Transfer" <?php if($checkIndex == 0) echo 'checked'; ?>> <?php _e( 'Airport pickups (Transfer)', 'yerevancar' ); ?></th>
+                                                <th><?php _e( 'Price', 'yerevancar' ); ?></th>
+                                                <td><?php echo $transferPrice; ?></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            <?php } ?>
                         </div>
 
 

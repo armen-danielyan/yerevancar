@@ -6,6 +6,8 @@
 
                 <div class="col-sm-12">
                     <div class="row">
+                        <h3 class="text-center"><?php _e( 'Search', 'yerevancar' ); echo ': ' . get_search_query(); ?></h3>
+
                         <?php if(have_posts()): while(have_posts()): the_post(); ?>
 
                             <div class="col-sm-3">
@@ -15,7 +17,10 @@
                                 </a>
                             </div>
 
-                        <?php endwhile; endif; ?>
+                        <?php endwhile;
+                        else: ?>
+                            <h4 class="text-center"><?php _e( 'No Result Found', 'yerevancar' ); ?></h4>
+                        <?php endif; ?>
                     </div>
                 </div>
 
