@@ -20,6 +20,7 @@
                         <div class="col-md-4">
 
                             <div class="serviceItem">
+                                <span class="service-item-title"><?php the_title(); ?></span>
                                 <?php the_post_thumbnail( 'large-thumb', array( 'class' => 'img-responsive' ) ); ?>
                                 <div class="mask">
                                     <h2><?php the_title(); ?></h2>

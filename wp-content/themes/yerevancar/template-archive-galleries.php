@@ -19,7 +19,13 @@
                     $galleriesArchiveArgs = array(
                         'post_type'         => 'cars',
                         'posts_per_page'    => 6,
-                        'paged'             => $paged
+                        'paged'             => $paged,
+                        'meta_query'        => array(
+                            array(
+                                'key'       => '_YC_product_galleryfull_ids',
+                                'compare'   => 'EXISTS'
+                            )
+                        )
                     );
                     $galleryQuery = new WP_Query( $galleriesArchiveArgs );
                     if($galleryQuery->have_posts()): while($galleryQuery->have_posts()): $galleryQuery->the_post();
@@ -52,28 +58,32 @@
 
                         <?php
                         if($paged == $galleryQuery->max_num_pages){
-                            $weddingPhotosPostId = icl_object_id(717, 'post', true);
-                            $weddingPhotosPostContent = get_post_field('post_content', $weddingPhotosPostId);
-                            $patt = '';
-                            preg_match_all( '/^\[.*ids="(.+)".*\]$/', $weddingPhotosPostContent, $res );
-                            $galleryFullIdsArr = explode( ',', $res[1][0]);
-                            ?>
-                            <div class="col-sm-4">
-                                <?php
-                                $i = 0;
-                                foreach($galleryFullIdsArr as $galleryFullId) { ?>
-                                    <a class="fancybox" title="<?php echo get_the_title($weddingPhotosPostId); ?>" style="display:none" rel="gallerywedding" href="<?php echo wp_get_attachment_image_src( $galleryFullId, 'extra-large-thumb' )[0]; ?>">
-                                        <?php echo wp_get_attachment_image( $galleryFullId, 'large-thumb', false, array( 'class' => 'img-responsive' ) ); ?>
+                            $additionslPostsIds = array(717, 854);
+                            foreach($additionslPostsIds as $additionslPostId){
+                                $gal++;
+                                $weddingPhotosPostId = icl_object_id($additionslPostId, 'post', true);
+                                $weddingPhotosPostContent = get_post_field('post_content', $weddingPhotosPostId);
+                                $patt = '';
+                                preg_match_all( '/^\[.*ids="(.+)".*\]$/', $weddingPhotosPostContent, $res );
+                                $galleryFullIdsArr = explode( ',', $res[1][0]);
+                                ?>
+                                <div class="col-sm-4">
+                                    <?php
+                                    $i = 0;
+                                    foreach($galleryFullIdsArr as $galleryFullId) { ?>
+                                        <a class="fancybox" title="<?php echo get_the_title($weddingPhotosPostId); ?>" style="display:none" rel="<?php echo 'gallery' . $gal; ?>" href="<?php echo wp_get_attachment_image_src( $galleryFullId, 'extra-large-thumb' )[0]; ?>">
+                                            <?php echo wp_get_attachment_image( $galleryFullId, 'large-thumb', false, array( 'class' => 'img-responsive' ) ); ?>
+                                        </a>
+                                        <?php $i++;
+                                    }
+                                    $thumbSrc = wp_get_attachment_image_src( get_post_thumbnail_id( $weddingPhotosPostId ), 'extra-large-thumb' ); ?>
+                                    <a class="fancybox" title="<?php echo get_the_title($weddingPhotosPostId); ?>" href="<?php echo $thumbSrc[0]; ?>" rel="<?php echo 'gallery' . $gal; ?>">
+                                        <span class="gal-icon"></span>
+                                        <?php echo get_the_post_thumbnail( $weddingPhotosPostId, 'large-thumb', array( 'class' => 'img-responsive gal-thumbnail' ) ); ?>
                                     </a>
-                                    <?php $i++;
-                                }
-                                $thumbSrc = wp_get_attachment_image_src( get_post_thumbnail_id( $weddingPhotosPostId ), 'extra-large-thumb' ); ?>
-                                <a class="fancybox" title="<?php echo get_the_title($weddingPhotosPostId); ?>" href="<?php echo $thumbSrc[0]; ?>" rel="gallerywedding">
-                                    <span class="gal-icon"></span>
-                                    <?php echo get_the_post_thumbnail( $weddingPhotosPostId, 'large-thumb', array( 'class' => 'img-responsive gal-thumbnail' ) ); ?>
-                                </a>
-                                <h4><?php echo get_the_title($weddingPhotosPostId); ?></h4>
-                            </div>
+                                    <h4><?php echo get_the_title($weddingPhotosPostId); ?></h4>
+                                </div>
+                            <?php } ?>
                         <?php } ?>
 
                         <div class="row">

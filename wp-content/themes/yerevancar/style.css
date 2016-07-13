@@ -31,11 +31,16 @@ header{
 
 #header-top-menu a{
     color: #ffffff;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 24px;
 }
 
+#header-top-menu a:hover{
+	text-decoration: none;
+}
+
 #header-top-menu .social-icons ul{
+    display: inline-block;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -49,6 +54,10 @@ header{
 .header-section{
 	background: #ffffff;
 	box-shadow: 0 0 30px #888888;
+}
+
+.header-mail{
+    text-align: right;
 }
 
 address {
@@ -90,12 +99,25 @@ address {
 	padding: 10px;
 	font-size: 14px;
 	text-transform: uppercase;
-	color: #272727;
+	color: #ffffff;
+}
+
+#bs-example-navbar-collapse-1{
+    border-radius: 4px;
+    margin-top: 15px;
+    background-color: #860001;
 }
 
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li.active > a {
 	color: #840001 !important;
-	background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li.active {
+    background-color: #d4bfc0;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+    background-color: #d4bfc0 !important;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
@@ -659,6 +681,23 @@ visibility: visible;
     cursor: default;
     /*background: #fff url(../images/bgimg.jpg) no-repeat center center;*/
 }
+
+.serviceItem .service-item-title {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 22px;
+    text-shadow: 1px 1px 1px #000000;
+    z-index: 10002;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -webkit-transition: opacity 1s ease-in-out;
+}
+
 .serviceItem .mask,.serviceItem .content {
     /*width: 300px;*/
     height: 200px;
@@ -697,17 +736,10 @@ visibility: visible;
     display: inline-block;
     text-decoration: none;
     padding: 7px 14px;
-    background: #000;
+    background: #860001;
     color: #fff;
     text-transform: uppercase;
-    -webkit-box-shadow: 0 0 1px #000;
-    -moz-box-shadow: 0 0 1px #000;
-    box-shadow: 0 0 1px #000;
-}
-.serviceItem a.info:hover {
-    -webkit-box-shadow: 0 0 5px #000;
-    -moz-box-shadow: 0 0 5px #000;
-    box-shadow: 0 0 5px #000;
+    border-radius: 4px;
 }
 
 .serviceItem img {
@@ -718,6 +750,7 @@ visibility: visible;
     transition: all 0.4s ease-in-out 0.5s;
 }
 .serviceItem .mask {
+    z-index: 10004;
     background-color: rgba(146,96,91,0.5);
     -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
@@ -734,7 +767,7 @@ visibility: visible;
     opacity: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     background: transparent;
-    margin: 5px 5px 0 5px;
+    margin: 25px 5px 0 5px;
     -webkit-transform: scale(10);
     -moz-transform: scale(10);
     -o-transform: scale(10);
@@ -786,6 +819,14 @@ visibility: visible;
     -ms-transition-delay: 0s;
     transition-delay: 0s;
 }
+
+.serviceItem:hover .service-item-title {
+    opacity: 0;
+    transition: opacity .55s ease-in-out;
+    -moz-transition: opacity .55s ease-in-out;
+    -webkit-transition: opacity .55s ease-in-out;
+}
+
 .serviceItem:hover img {
     -webkit-transition-delay: 0s;
     -moz-transition-delay: 0s;
@@ -843,27 +884,41 @@ visibility: visible;
 
 /***Pagination***/
 .paged{
+	margin: 15px 0;
     text-align: center;
     font-size: 14px;
     line-height: 18px;
 }
 
-.paged a, .paged span{
+.paged a, .paged span, #paged span{
     padding: 5px;
 }
 
-.paged a{
+.paged a, #paged span{
     color: #ffffff;
     background-color: #840001;
 
 }
 
-.paged a:hover{
+.paged a:hover, #paged span:hover{
     color: #ffffff;
     background-color: #954b4b;
     text-decoration: none;
 }
+
+#paged .active, #paged span.active:hover{
+    background: none;
+    color: #333333;
+    cursor: default;
+}
+#paged span{
+    cursor: pointer;
+}
 /***END SPagination***/
+
+.ui-datepicker table {
+    font-size: 0.8em !important;
+}
 
 @media screen and (max-width: 1200px) {
 	.services-section a {
@@ -878,6 +933,10 @@ visibility: visible;
 }
 
 @media screen and (max-width: 991px) {
+    .social-icons, .header-mail{
+        text-align: center;
+    }
+
 	.services-section a {
 		width: 100%;
 	}
@@ -898,7 +957,8 @@ visibility: visible;
 	}
 
 	#menu-header-main-menu li a, #menu-header-main-menu-en li a, #menu-header-main-menu-ru li a{
-		padding: 15px 14px;
+        font-size: 12px;
+        padding: 15px 5px;
 	}
 
 }

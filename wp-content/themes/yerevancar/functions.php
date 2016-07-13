@@ -745,8 +745,7 @@ function orderSend() {
         <tr><th>' . __( 'Other Services', 'yerevancar' ) . '</th><td>' . $otherServiceNames . '</td></tr>
     </table>
     </body>
-    </html>
-    ';
+    </html>';
 
     $from = $adminEmail;
     $to = $adminEmail;

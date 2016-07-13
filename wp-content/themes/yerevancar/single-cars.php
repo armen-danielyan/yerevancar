@@ -1,5 +1,11 @@
 <?php get_header(); ?>
 
+    <?php if(ICL_LANGUAGE_CODE == 'hy') { ?>
+        <script src="<?php bloginfo('template_url'); ?>/js/datepicker-hy.js"></script>
+    <?php } elseif(ICL_LANGUAGE_CODE == 'ru') { ?>
+        <script src="<?php bloginfo('template_url'); ?>/js/datepicker-ru.js"></script>
+    <?php } ?>
+
     <main id="single-car-page">
         <section>
             <div class="row">
@@ -30,8 +36,6 @@
 
                 <?php $kk = array( 123, 456, 789, 954);
                 $bb = array_diff($kk, array(456));
-                //var_dump($kk);
-                //var_dump($bb);
                 ?>
 
                 <div class="col-sm-8 col-md-6">
@@ -365,7 +369,7 @@
             $( "#dateFrom" ).datepicker({
                 defaultDate: "+1w",
                 changeMonth: true,
-                numberOfMonths: 2,
+                numberOfMonths: 1,
                 onClose: function( selectedDate ) {
                     $("#dateTo").datepicker( "option", "minDate", selectedDate );
                 },
@@ -374,7 +378,7 @@
             $( "#dateTo" ).datepicker({
                 defaultDate: "+1w",
                 changeMonth: true,
-                numberOfMonths: 2,
+                numberOfMonths: 1,
                 onClose: function( selectedDate ) {
                     $("#dateFrom").datepicker( "option", "maxDate", selectedDate );
                 },
@@ -543,7 +547,7 @@
     </script>
 
     <script>
-        jQuery(document).ready(function ($) {
+        jQuery(document).ready(function($) {
             $(".fancybox").fancybox({
                 openEffect: 'none',
                 closeEffect: 'none'

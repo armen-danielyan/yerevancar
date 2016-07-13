@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <?php $description = 'Երևանի լավագույն էլիտար ավտովարձույթ Yerevan Cars, Ձեր բոլոր նախասիրությունների համար։ Հարսանեկան, ներկայացուցչական և օրավարձով բարձրակարգ մեքենաներ։';
@@ -27,17 +27,21 @@
     <div class="container header-section">
         <header>
             <div class="row" id="header-top-menu">
-                <div class="col-sm-3 social-icons">
+                <div class="col-md-4 social-icons">
                     <ul>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-odnoklassniki"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://www.facebook.com/YerevanCar" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://ok.ru/profile/587626565934" target="_blank"><i class="fa fa-odnoklassniki"></i></a></li>
+                        <li><a href="https://twitter.com/YerevanCar" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/yerevan_car" target="_blank"><i class="fa fa-instagram"></i></a></li>
                     </ul>
                 </div>
 
-                <div class="col-sm-6 mobile-numbers text-center">
+                <div class="col-md-4 mobile-numbers text-center">
                     <div><i class="fa fa-phone"></i> +374 91 177979, +374 98 077979</div>
+                </div>
+
+                <div class="col-md-4 header-mail">
+                    <div><i class="fa fa-envelope"></i><a href="mailto:info@yerevancar.am"> info@yerevancar.am</a></div>
                 </div>
             </div>
 
@@ -79,7 +83,7 @@
             </div>
 
             <nav class="navbar navbar-default car-navbar no-border" role="navigation">
-                <div class="container-fluid">
+                <div>
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                             <span class="sr-only">Toggle navigation</span>
